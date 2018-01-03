@@ -36,13 +36,21 @@ header label, footer label {
   display: block;
   height: 100%;
   text-align: center;
-  padding-top: 24px;
-  border: 1px dashed;
   box-sizing: border-box;
   flex: auto;
   width: 100%;
-
 }
+footer label {
+  border-style: dashed none dotted double;
+  border-width: 3px;
+  border-top-left-radius: 20px;
+}
+header label {
+  border-style: dotted none dashed double;
+  border-width: 13px;
+  border-bottom-left-radius: 40px;
+}
+
 html:not([debug]) input[type="radio"] {
   -webkit-appearance:none;
   margin: 0;
@@ -54,7 +62,6 @@ main {
       display: flex;
       flex-wrap: nowrap;
   transition: margin 1s;
-//  box-sizing: border-box;
   white-space: nowrap;
 }
 
@@ -89,6 +96,10 @@ article:nth-child(odd) {
   }
 
 @media (max-width: 600px) {
+  header label, footer label {
+    padding-top: 12px;
+  }
+
   footer {
     display: flex;
   }
@@ -113,6 +124,10 @@ article:nth-child(odd) {
   header {
     display: flex;
   }
+  header label, footer label {
+    padding-top: 24px;
+  }
+
   main {
     width: 200vw;
   }
