@@ -66,7 +66,6 @@ nav, article {
   flex-shrink: 0;
   transition: background-color 0.5s;
   min-height: 100vh;
-  padding: 96px 0 0;
 }
 
 nav { 
@@ -96,6 +95,9 @@ article:nth-child(odd) {
   main {
     width: 400vw;
   }
+  nav>*, article>* {
+    padding: 1em 1em 64px;
+  }
   #checked1:checked ~ main {
     margin-left: -100vw;
   }
@@ -117,6 +119,9 @@ article:nth-child(odd) {
   nav, article {
     width: 50vw;
     flex-basis: 50vw;
+  }
+  nav>*, article>* {
+    padding: 96px 1em 1em;
   }
   
   #checked2:checked ~ main {
