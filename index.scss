@@ -1,0 +1,126 @@
+html:not([debug]) {
+  overflow-x: hidden;
+}
+body {
+  width:100vw;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  background-color: #eeeeee;
+  position: relative;
+}
+
+.hidden, [hidden] {
+  display: none!important;
+}
+header { 
+  background-color: aquamarine; 
+  width: 100vw;
+  height: 96px;
+  position:fixed;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+
+footer { 
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 64px;
+  position:fixed;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+}
+
+header label, footer label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+html:not([debug]) input[type="radio"] {
+  -webkit-appearance:none;
+  margin: 0;
+  display: none;
+}
+
+main {
+  height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+  transition: margin 1s;
+//  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+nav, article {
+//  display: inline-block;
+  width: 100vw;
+  flex-basis: 100vw;
+  flex-grow: 0;
+  flex-shrink: 0;
+  transition: background-color 0.5s;
+  min-height: 100vh;
+  padding: 96px 0 0;
+}
+
+nav { 
+  background-color: aliceblue; 
+}
+  .navcontent { 
+    height: 2000px;
+  }
+
+article { 
+  background-color: darkseagreen;
+}
+
+  header { 
+  }
+  main {
+    margin-left: 0;
+  }
+
+@media (max-width: 600px) {
+  footer {
+    display: flex;
+  }
+  main {
+    width: 400vw;
+  }
+  #checked1:checked ~ main {
+    margin-left: -100vw;
+  }
+  #checked2:checked ~ main {
+    margin-left: -200vw;
+  }
+  #checked3:checked ~ main {
+    margin-left: -300vw;
+  }
+}
+
+@media (min-width: 601px) {
+  header {
+    display: flex;
+  }
+  main {
+    width: 200vw;
+  }
+  nav, article {
+    width: 50vw;
+    flex-basis: 50vw;
+  }
+  
+  #checked2:checked ~ main {
+    margin-left: -100vw;
+  }
+  #checked3:checked ~ main {
+    margin-left: -100vw;
+  }
+}
+
+  html[debug] header {
+    display: none;
+  }
+  html[debug] footer {
+    display: none;
+  }
