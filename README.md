@@ -1,2 +1,2 @@
 # css-spa
-css-only bifrontal single page web app
+css-only bi/quadra-frontal single page web app
